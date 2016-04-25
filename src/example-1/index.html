@@ -15,12 +15,27 @@
     <script type="text/javascript" class="init">
         $(document).ready(function() {
             $('#example').DataTable( {
+                "ajax": '../../data/presupuestos-malaga.csv'
             } );
         } );
 
     </script>
 </head>
 <body>
-    <div id="example"></div>
+  <div id="container">
+    <table id="example" class="display" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th>TIPO</th>
+          <th>ENTIDAD</th>
+          <th>EJERCICIO</th>
+          <th>ORGÁNICO</th>
+          <th>PROGRAMA</th>
+          <th>ECONÓMICO</th>
+          <th>IMPORTE</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
 </body>
 </html>
