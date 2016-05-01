@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Example 1 - Simple Start</title>
+    <title>Example 3 - More columns</title>
 
     <!--js libs-->
     <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
@@ -14,17 +14,32 @@
     <script type="text/javascript" class="init">
         d3.csv("../../data/presupuestos-malaga.csv", function(data) {
             console.log(data);
-            dataset = data.map(function(d) { return {"TIPO": d["TIPO"], "ENTIDAD": +d["ENTIDAD"], "EJERCICIO": +d["EJERCICIO"] }; });
+            dataset = data.map(function(d) {
+                                return {
+                                    "TIPO": d["TIPO"],
+                                    "ENTIDAD": +d["ENTIDAD"],
+                                    "EJERCICIO": +d["EJERCICIO"],
+                                    "ORGANICO": d["ORGÁNICO"],
+                                    "PROGRAMA": +d["PROGRAMA"],
+                                    "ECONOMICO": d["ECONÓMICO"],
+                                    "IMPORTE": d["IMPORTE"]
+                                };
+            });
             console.log(dataset);
 
             $(document).ready(function() {
                 $('#example').DataTable( {
                     "data": dataset,
+                    "lengthMenu": [ [20, 40, 80, -1], [20, 40, 80, "All"] ],
+                    "pageLength": 50,
                     columns: [
                                 { data: 'TIPO' },
                                 { data: 'ENTIDAD' },
                                 { data: 'EJERCICIO' },
-//                                { data: 'position' }
+                                { data: 'ORGANICO' },
+                                { data: 'PROGRAMA' },
+                                { data: 'ECONOMICO' },
+                                { data: 'IMPORTE' }
                             ]
                 } );
             } );
@@ -43,10 +58,10 @@
           <th>TIPO</th>
           <th>ENTIDAD</th>
           <th>EJERCICIO</th>
-          <!--<th>ORGÁNICO</th>-->
-          <!--<th>PROGRAMA</th>-->
-          <!--<th>ECONÓMICO</th>-->
-          <!--<th>IMPORTE</th>-->
+          <th>ORGÁNICO</th>
+          <th>PROGRAMA</th>
+          <th>ECONÓMICO</th>
+          <th>IMPORTE</th>
         </tr>
       </thead>
     </table>

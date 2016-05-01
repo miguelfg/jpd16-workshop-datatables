@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Example 1 - Simple Start</title>
+    <title>Example 2 - Adding pagination</title>
 
     <!--js libs-->
     <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
@@ -20,6 +20,8 @@
             $(document).ready(function() {
                 $('#example').DataTable( {
                     "data": dataset,
+                    "lengthMenu": [ [2, 4, 8, -1], [2, 4, 8, "All"] ],
+                    "pageLength": 4,
                     columns: [
                                 { data: 'TIPO' },
                                 { data: 'ENTIDAD' },
