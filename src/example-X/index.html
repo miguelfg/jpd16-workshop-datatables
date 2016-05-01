@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 3 - Custom language Datatables controls</title>
+
+    <!--js libs-->
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <!--<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-1.11.min.js"></script>-->
+    <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
+
+    <script type="text/javascript" class="init">
+        d3.csv("../../data/presupuestos-malaga.csv", function(data) {
+            dataset = data.map(function(d) {
+                                return {
+                                    "TIPO": d["TIPO"],
+                                    "ENTIDAD": +d["ENTIDAD"],
+                                    "EJERCICIO": +d["EJERCICIO"],
+                                    "ORGANICO": d["ORGÁNICO"],
+                                    "PROGRAMA": +d["PROGRAMA"],
+                                    "ECONOMICO": d["ECONÓMICO"],
+                                    "IMPORTE": d["IMPORTE"]
+                                };
+            });
+            console.log(dataset);
+
+            $(document).ready(function() {
+                $('#example').DataTable( {
+                    "data": dataset,
+                    "lengthMenu": [ [20, 40, 80, -1], [20, 40, 80, "All"] ],
+                    "pageLength": 5,
+                    "language": {
+                        "url": 'https://cdn.datatables.net/plug-ins/1.10.11/i18n/Chinese.json'
+
+                    },
+                    columns: [
+                                { data: 'TIPO' },
+                                { data: 'ENTIDAD' },
+                                { data: 'EJERCICIO' },
+                                { data: 'ORGANICO' },
+                                { data: 'PROGRAMA' },
+                                { data: 'ECONOMICO' },
+                                { data: 'IMPORTE' }
+                            ]
+                } );
+            } );
+        });
+    </script>
+
+    <!--css libs-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.min.css">
+</head>
+<body>
+  <div id="container">
+    <table id="example" class="display" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+          <th>TIPO</th>
+          <th>ENTIDAD</th>
+          <th>EJERCICIO</th>
+          <th>ORGÁNICO</th>
+          <th>PROGRAMA</th>
+          <th>ECONÓMICO</th>
+          <th>IMPORTE</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</body>
+</html>
