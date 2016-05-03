@@ -24,8 +24,125 @@
     <body>
         <div class="reveal">
             <div class="slides">
-                <section>Slide 1</section>
-                <section>Slide 2</section>
+                <section>
+                    <h2>Tutorial DataTables.js</h2>
+                    <p>
+                        <small>
+                            <a href="https://github.com/miguelfg/jpd16-workshop-datatables">Github repository</a>
+                            <br/>
+                            <a href="http://twitter.com/mfiandor">@mfiandor</a>
+                        </small>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>¿Qué es?</h2>
+                    <p>
+                        <i>
+                            DataTables is a plug-in for the jQuery Javascript library. It is a highly flexible tool, based upon the foundations of progressive enhancement, and will add advanced interaction controls to any HTML table.
+                        </i>
+                    </p>
+                </section>
+                <section>
+                    <h2>Ejemplos</h2>
+                    <p>
+                    </p>
+                </section>
+                <section>
+                    <h2>Ejemplos</h2>
+                    <p>
+                    </p>
+                </section>
+                <section>
+                    <h2>¿Para qué sirve?<br/>¿Cuándo usarlo?</h2>
+                    <p>
+                        <ul>
+                            <li>Bueno, bonito y barato</li>
+                            <li>Filtrar</li>
+                            <li>Buscar</li>
+                            <li>Ordenar</li>
+                            <li>Exportar</li>
+                            <li>Paginar (Ajax)</li>
+                            <li>Compartir/publicar</li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h2><a href="https://www.datatables.net/extensions/index">Extensiones</a></h2>
+                    <p>
+                        <ul>
+                            <li>Autofill</li>
+                            <li>Botones</li>
+                            <li>ColReorder</li>
+                            <li>...</li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h2><a href="https://www.datatables.net/plugins/index">Plugins</a></h2>
+                    <p>
+                        <ul>
+                            <li>Idiomas</li>
+                            <li>Detección de tipos en los datos</li>
+                            <li>...</li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h2>¿Cómo usarlo?</h2>
+                    <p>
+                        <ol>
+                            <li>git pull del repositorio</li>
+                            <li>instalar servidor local
+                            <ul>
+                                <li>python</li>
+                                <li>npm</li>
+                                <li>...</li>
+                            </ul>
+                            </li>
+                            <li>ejecutar servidor local</li>
+                            <li>visitar url: http://localhost:xxx/src/example-1/</li>
+                        </ol>
+                    </p>
+                </section>
+                <section>
+                    <h2>Ejemplo 1</h2>
+                    <p>
+                    </p>
+                </section>
+                <section>
+                    <h2></h2>
+                    <p>
+                    </p>
+                </section>
+                <section>
+                    <h2></h2>
+                    <p>
+                    </p>
+                </section>
+                <section>
+                    <h2></h2>
+                    <p>
+                    </p>
+                </section>
+                <section>
+                    <h2>Sitios útiles</h2>
+                    <p>
+                        <ul>
+                            <li>Idiomas</li>
+                        </ul>
+                    </p>
+                </section>
+                <section>
+                    <h2>Gracias</h2>
+                    <p>
+                    </p>
+                </section>
+                <section>
+                    <h2></h2>
+                    <p>
+                    </p>
+                </section>
             </div>
         </div>
 
@@ -35,7 +152,96 @@
         <script>
             // More info https://github.com/hakimel/reveal.js#configuration
             Reveal.initialize({
-                history: true,
+                // Display controls in the bottom right corner
+                controls: true,
+
+                // Display a presentation progress bar
+                progress: true,
+
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Push each slide change to the browser history
+                history: false,
+
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+
+                // Change the presentation direction to be RTL
+                rtl: false,
+
+                // Randomizes the order of slides each time the presentation loads
+                shuffle: false,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Flags if we should show a help overlay when the questionmark
+                // key is pressed
+                help: true,
+
+                // Flags if speaker notes should be visible to all viewers
+                showNotes: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Use this method for navigation when auto-sliding
+                autoSlideMethod: Reveal.navigateNext,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition style
+                transition: 'default', // none/fade/slide/convex/concave/zoom
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+
+                // Number of pixels to move the parallax background per slide
+                // - Calculated automatically unless specified
+                // - Set to 0 to disable movement along an axis
+                parallaxBackgroundHorizontal: null,
+                parallaxBackgroundVertical: null,
 
                 // More info https://github.com/hakimel/reveal.js#dependencies
                 dependencies: [
