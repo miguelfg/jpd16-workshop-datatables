@@ -88,22 +88,26 @@
                         </ul>
                     </p>
                 </section>
-                <section>
+                <section data-background-color="rgba( 200, 50, 30, 0.6 )">
                     <h2>¿Cómo usarlo?</h2>
                     <p>
                         <ol>
-                            <li>git pull del repositorio</li>
-                            <li>instalar servidor local
-                            <ul>
-                                <li>python</li>
-                                <li>npm</li>
-                                <li>...</li>
-                            </ul>
+                            <li><a href="https://git-scm.com/book/es/v1/Empezando-Instalando-Git">instalar git</a></li>
+                            <li>git pull del repositorio:
+                                <pre style="width: 100%;"><code>> git clone git@github.com:miguelfg/jpd16-workshop-datatables.git </code></pre>
                             </li>
-                            <li>ejecutar servidor local</li>
+                            <li>instalar servidor local
+                                <ul>
+                                    <li>python 2.X:
+                                        <pre style="width: 100%;"><code>> python -m SimpleHTTPServer 8000</code></pre>
+                                    </li>
+                                    <li>python 3.X: <pre style="width: 100%;"><code>> python -m http.server 8000</code></pre> </li>
+                                    <li><a href="https://www.npmjs.com/package/http-server">npm</a></li>
+                                </ul>
+                            </li>
+                            <li>ejecutar servidor local desde la raíz del repositorio</li>
                             <li>visitar url: http://localhost:xxx/src/example-1/</li>
-                            <li>[OPT] instalar csvkit</li>
-                            <li>[OPT] descargar data</li>
+                            <li>[OPT] <a href="http://csvkit.readthedocs.io/en/0.9.1/">instalar csvkit</a></li>
                         </ol>
                     </p>
                 </section>
@@ -173,10 +177,10 @@
                 progress: true,
 
                 // Display the page number of the current slide
-                slideNumber: false,
+                slideNumber: true,
 
                 // Push each slide change to the browser history
-                history: false,
+                history: true,
 
                 // Enable keyboard shortcuts for navigation
                 keyboard: true,
