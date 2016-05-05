@@ -1,2 +1,4 @@
 .idea
 data/*zip
+data/airports.csv
+!data/airports.csv.zip

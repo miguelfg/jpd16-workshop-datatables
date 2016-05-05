@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 8 - more options</title>
+
+    <!--js libs-->
+    <script type="text/javascript" language="javascript" src="../../lib/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../../lib/d3.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../../lib/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../../lib/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../../lib/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.1.2/js/dataTables.select.min.js"></script>
+
+    <script type="text/javascript" class="init">
+        d3.csv("../../data/airports.sample.csv", function(data) {
+            dataset = data.map(function(d) {
+                                return {
+                                    "id": d["id"],
+                                    "ident": d["ident"],
+                                    "type": d["type"],
+                                    "name": d["name"],
+                                    "latitude_deg": d["latitude_deg"],
+                                    "longitude_deg": d["longitude_deg"],
+                                    "elevation_ft": d["elevation_ft"],
+                                    "continent": d["continent"],
+                                    "iso_country": d["iso_country"],
+                                    "iso_region": d["iso_region"],
+                                    "municipality": d["municipality"],
+                                    "scheduled_service": d["scheduled_service"],
+                                    "gps_code": d["gps_code"],
+                                    "iata_code": d["iata_code"],
+                                    "local_code": d["local_code"],
+                                    "home_link": d["home_link"],
+                                    "wikipedia_link": d["wikipedia_link"],
+                                    "keywords": d["keywords"]
+                                };
+            });
+            $(document).ready(function() {
+                $('#example').DataTable( {
+                    "data": dataset,
+                    "lengthMenu": [ [20, 40, 80, -1], [20, 40, 80, "All"] ],
+                    "pageLength": 10,
+                    searching: false,
+//                    ordering: false,
+//                    select: 'single',
+                    select: {
+                        style: 'multi'
+                    },
+//                    select: {
+//                        style:    'os',
+//                        selector: 'td:first-child'
+//                    },
+                    scrollX: true,
+                    scrollY: true,
+//                    order: [[ 1, 'asc' ]],
+                    columns: [
+                                { data: 'id' },
+                                { data: 'ident' },
+                                { data: 'type' },
+                                { data: 'name' },
+                                { data: 'latitude_deg' },
+                                { data: 'longitude_deg' },
+                                { data: 'elevation_ft' },
+                                { data: 'continent' },
+                                { data: 'iso_country' },
+                                { data: 'iso_region' },
+                                { data: 'municipality' },
+                                { data: 'scheduled_service' },
+                                { data: 'gps_code' },
+                                { data: 'iata_code' },
+                                { data: 'local_code' },
+                                { data: 'home_link' },
+                                { data: 'wikipedia_link' },
+                                { data: 'keywords' },
+                            ]
+                } );
+            } );
+        });
+    </script>
+
+    <!--css libs-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.1.2/css/buttons.dataTables.min.css">
+</head>
+<body>
+  <div id="container">
+  <h1>Ejemplo 8 - Más opciones</h1>
+    <table id="example" class="display" cellspacing="0" width="100%">
+      <thead>
+        <tr>
+            <th>id</th>
+            <th>ident</th>
+            <th>type</th>
+            <th>name</th>
+            <th>latitude_deg</th>
+            <th>longitude_deg</th>
+            <th>elevation_ft</th>
+            <th>continent</th>
+            <th>iso_country</th>
+            <th>iso_region</th>
+            <th>municipality</th>
+            <th>scheduled_service</th>
+            <th>gps_code</th>
+            <th>iata_code</th>
+            <th>local_code</th>
+            <th>home_link</th>
+            <th>wikipedia_link</th>
+            <th>keywords</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</body>
+</html>
