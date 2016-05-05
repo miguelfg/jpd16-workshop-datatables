@@ -2,20 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Example 4 - Irish Panama Papers Data</title>
+    <title>Example 5 - Add export buttons</title>
 
     <!--js libs-->
-    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <!--<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>-->
+    <script type="text/javascript" language="javascript" src="../../lib/jquery-2.2.3.min.js"></script>
 
-    <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
+    <!--<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.min.js"></script>-->
+    <!--<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>-->
+    <!--<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>-->
+
+    <script type="text/javascript" language="javascript" src="../../lib/d3.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../../lib/jszip.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../../lib/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../../lib/dataTables.buttons.min.js"></script>
+
+    <script type="text/javascript" language="javascript" src="../../lib/buttons.html5.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../../lib/pdfmake.min.js"></script>
+
+
+    <!--//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js-->
+    <!--//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js-->
 
     <script type="text/javascript" class="init">
         $(document).ready(function() {
             $('#example').DataTable( {
-                "lengthMenu": [ [20, 40, 80, -1], [20, 40, 80, "All"] ],
-                "pageLength": 20,
+                lengthMenu: [ [20, 40, 80, -1], [20, 40, 80, "All"] ],
+                pageLength: 20,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ],
                 columns: [
                             { data: 'Intermediary' },
                             { data: 'Name of company created' },
@@ -31,7 +51,7 @@
 </head>
 <body>
   <div id="container">
-  <h1>Ejemplo 4 - Tabla en html</h1>
+  <h1>Ejemplo 5 - Habilitar descarga de datos</h1>
     <table class="datatable-default dataTable" id="example" aria-describedby="datatable_info">
         <thead>
         <tr role="row">
